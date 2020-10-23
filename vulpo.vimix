@@ -1,0 +1,139 @@
+" Name: vulpo
+" Description: dark, naturalistic, retro colorscheme
+" Author: Nova Senco <novasenco at protonmail dot ch>
+" Last Change: 23 October 2020
+" URL: https://github.com/novasenco/vulpo
+" Type: dark
+
+! |vimix-palette|
+
+fg: 187 ~ [7,7]
+bg: 234 ~ [0,0]
+0 : 238 ~ [grey]
+1 : 167 ~ [red]
+2 : 65  ~ [green]
+3 : 173 ~ [orange]
+4 : 66  ~ [blue]
+5 : 95  ~ [brown]
+6 : 101 ~ [cyan]
+7 : 187 ~ [white]
+8 : 241 ~ [bright_grey]
+9 : 203 ~ [bright_red]
+10: 107 ~ [bright_green]
+11: 180 ~ [yellow]
+12: 109 ~ [bright_blue]
+13: 140 ~ [bright_magenta]
+14: 72  ~ [bright_cyan]
+15: 251 ~ [bright_white]
+
+! extra colors for 256color and termguicolor
+pitch_black: 232 ~ [0,none]
+dark_black : 233 ~ [0,none]
+faint_black: 235 ~ [0,0]
+light_black: 236 ~ [0,0]
+
+" |group-name|
+
+Constant   red
+String     green
+Identifier yellow
+Statement  orange
+Function -> PreProc -> Special -> Type -> Identifier
+
+Comment I bright_grey
+Ignore    bright_grey
+
+Bold       B
+Italic     I
+Underlined U
+Tag        U orange
+HtmlBold -> Bold ; HtmlItalic -> Italic ; HtmlUnderline -> Underlined
+
+Error BR red
+Todo  BR green
+
+" |highlight-groups|
+
+Terminal -> Normal
+
+StatusLine   bright_white grey
+StatusLineNC yellow       light_black
+StatusLineTerm -> StatusLine ; StatusLineTermNC -> StatusLineNC
+
+TabLine       yellow grey
+TabLineFill   green  dark_black
+TabLineSel  B yellow bright_grey
+
+Pmenu        orange grey
+PmenuSel     yellow bright_grey
+PmenuSbar  R grey
+PmenuThumb R green
+
+WildMenu BR orange
+
+Title      IB blue
+SpecialKey    bright_grey
+
+NonText I blue dark_black
+Folded -> NonText
+
+EndOfBuffer blue pitch_black
+
+Search       BR orange
+IncSearch    BR yellow
+QuickFixLine B  ~      light_black
+
+Conceal  brown
+Cursor   R     bright_white
+lCursor  R     bright_white
+CursorIM R     bright_white
+
+Directory bright_blue
+
+ErrorMsg   BR red
+WarningMsg BR yellow
+
+ModeMsg B orange
+MoreMsg  -> Question -> ModeMsg
+
+SpellBad BR red
+SpellCap -> SpellLocal -> SpellRare -> SpellBad
+
+DiffAdd    BR green
+DiffDelete    brown  brown
+DiffChange R  cyan
+DiffText   BR yellow
+
+DiffAdded   B green light_black
+DiffRemoved B red   light_black
+
+ColorColumn  ~ faint_black
+CursorColumn ~ faint_black
+CursorLine   ~ faint_black
+
+Visual    cyan light_black
+VisualNOS cyan light_black
+
+VertSplit blue
+
+LineNr       yellow light_black
+CursorLineNr red    light_black
+LineNrAbove  yellow light_black
+LineNrBelow  yellow light_black
+FoldColumn   red    light_black
+SignColumn   yellow light_black
+
+MatchParen BR orange
+
+< filetype modifications
+>if get(g:, 'vulpo_ft_mods', 1)
+  < c
+  cStorageClass         -> Statement
+  cEnum                 -> Statement
+  cTypedef              -> Statement
+  cMacroName            -> Identifier
+  cDataStructureKeyword -> Identifier
+  < vim
+  vimHiAttrib -> Constant ; vimCommentTitle -> Title
+>endif
+
