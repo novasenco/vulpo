@@ -1,7 +1,7 @@
 " Name: vulpo
 " Description: dark, naturalistic, retro colorscheme
 " Author: Nova Senco <novasenco at protonmail dot ch>
-" Last Change: 23 October 2020
+" Last Change: 29 April 2021
 " URL: https://github.com/novasenco/vulpo
 " Type: dark
 
@@ -49,8 +49,8 @@ Underlined U
 Tag        U orange
 HtmlBold -> Bold ; HtmlItalic -> Italic ; HtmlUnderline -> Underlined
 
-Error BR red
-Todo  BR green
+Error B bg red
+Todo  B bg green
 
 " |highlight-groups|
 
@@ -64,12 +64,12 @@ TabLine       yellow grey
 TabLineFill   green  dark_black
 TabLineSel  B yellow bright_grey
 
-Pmenu        orange grey
-PmenuSel     yellow bright_grey
-PmenuSbar  R grey
-PmenuThumb R green
+Pmenu       orange  grey
+PmenuSel    yellow  bright_grey
+PmenuSbar   bg      grey
+PmenuThumb  bg      green
 
-WildMenu BR orange
+WildMenu B bg orange
 
 Title      IB blue
 SpecialKey    bright_grey
@@ -79,30 +79,30 @@ Folded -> NonText
 
 EndOfBuffer blue pitch_black
 
-Search       BR orange
-IncSearch    BR yellow
+Search       B bg orange
+IncSearch    B bg yellow
 QuickFixLine B  ~      light_black
 
 Conceal  brown
-Cursor   R     bright_white
-lCursor  R     bright_white
-CursorIM R     bright_white
+Cursor    bg     bright_white
+lCursor   bg     bright_white
+CursorIM  bg     bright_white
 
 Directory bright_blue
 
-ErrorMsg   BR red
-WarningMsg BR yellow
+ErrorMsg   B bg red
+WarningMsg B bg yellow
 
 ModeMsg B orange
 MoreMsg  -> Question -> ModeMsg
 
-SpellBad BR red
+SpellBad B bg red
 SpellCap -> SpellLocal -> SpellRare -> SpellBad
 
-DiffAdd    BR green
-DiffDelete    brown  brown
-DiffChange R  cyan
-DiffText   BR yellow
+DiffAdd    B bg    green
+DiffDelete   brown brown
+DiffChange   bg    cyan
+DiffText   B bg    yellow
 
 DiffAdded   B green light_black
 DiffRemoved B red   light_black
@@ -123,7 +123,7 @@ LineNrBelow  yellow light_black
 FoldColumn   red    light_black
 SignColumn   yellow light_black
 
-MatchParen BR orange
+MatchParen B bg orange
 
 < filetype modifications
 >if get(g:, 'vulpo_ft_mods', 1)
